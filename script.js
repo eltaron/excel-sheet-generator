@@ -15,11 +15,13 @@ const generateTable = () => {
     }
     if(rowsNumber>0 && columnsNumber>0){
         tableExists = true
+        Swal.fire('','Table generated while the fields are empty.','info')
     }
 }
 
 const ExportToExcel = (type, fn, dl) => {
     if(!tableExists){
+        Swal.fire('','There is no generated table to be exported.','warning')
         return
     }
     var elt = table
